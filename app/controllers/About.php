@@ -1,11 +1,11 @@
 <?php
 
-class About {
+class About extends Controller {
     public function index(){
-        echo 'About/index';
+        $this->view('about/index');
     }
 
     public function page(){
-        echo 'About/page';
+        $this->view('about/page');
     }
 }
