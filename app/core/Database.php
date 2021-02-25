@@ -63,4 +63,8 @@ class Database {
         $this->execute();
         return $this->stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    public function changedRowCount(){
+        return $this->stmt->rowCount(); // returns affected/changed row
+    }
 }
