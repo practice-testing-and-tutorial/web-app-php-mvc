@@ -8,7 +8,7 @@
 
     <div class="row">
         <div class="col-6">
-            <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#formModal">
+            <button type="button" class="btn btn-primary mb-3 tombolTambahData" data-toggle="modal" data-target="#formModal">
                 Tambah Data
             </button>
             <h3>Daftar Mahasiswa</h3>
@@ -17,6 +17,7 @@
                     <li class="list-group-item">
                         <?= $mhs['nama']; ?>
                         <a href="<?= BASEURL; ?>/mahasiswa/hapus/<?= $mhs['id']; ?>" class="badge badge-danger float-right ml-1" onclick="return confirm('Yakin?');">delete</a>
+                        <a href="<?= BASEURL; ?>/mahasiswa/ubah/<?= $mhs['id']; ?>" class="badge badge-success float-right ml-1 tampilModalUbah" data-toggle="modal" data-target="#formModal" data-id="<?= $mhs['id']; ?>">edit</a>
                         <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs['id']; ?>" class="badge badge-primary float-right ml-1">detail</a>
                     </li>
                 <?php endforeach; ?>
@@ -36,6 +37,7 @@
             </div>
             <div class="modal-body">
                 <form action="<?= BASEURL; ?>/mahasiswa/tambah" method="POST">
+                <input type="hidden" name="id" id="id">
                     <div class="form-group">
                         <label for="nama">Nama</label>
                         <input type="text" class="form-control" id="nama" name="nama" placeholder="Enter name">
