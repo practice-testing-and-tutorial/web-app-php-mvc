@@ -29,7 +29,7 @@ class App {
 
         // params
         if(!empty($url)){
-            $params = array_values($url);
+            $this->params = array_values($url);
         }
 
         // run controller and method,send params if any
