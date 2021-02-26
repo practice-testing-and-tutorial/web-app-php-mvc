@@ -51,4 +51,12 @@ class Mahasiswa extends Controller {
         header('Location: ' . BASEURL . '/mahasiswa');
         exit;
     }
+
+    public function cari(){
+        $data['title'] = 'Mahasiswa';
+        $data['mhs'] = $this->model('Mahasiswa_model')->cariDataMahasiswa($_POST['keyword']);
+        $this->view('templates/header', $data);
+        $this->view('mahasiswa/index', $data);
+        $this->view('templates/footer');
+    }
 }
